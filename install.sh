@@ -62,7 +62,7 @@ sleep 2
 ### Build the pls-info tool
 echo "Building pls-info tool in bin/"
 make pls-info
-printf "###################       (100%%)\n\n"
+printf "###################       (100%%)\ni\n"
 sleep 2
 
 printf "\nRun the executables from the bin/ directory\n"
