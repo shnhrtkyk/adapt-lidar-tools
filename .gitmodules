@@ -1,0 +1,3 @@
+[submodule "deps/PulseWaves"]
+	path = deps/PulseWaves
+	url = https://github.com/PulseWaves/PulseWaves.git
