@@ -65,8 +65,21 @@ make pls-info
 printf "###################       (100%%)\ni\n"
 sleep 2
 
-printf "\nRun the executables from the bin/ directory\n"
+printf "\nRun the executables from the $(pwd)/bin directory\n"
 printf "Alternately, you may add the directory to your Environment Path\n"
-printf "\nInstallation complete\n"
-exit 0
 
+echo "Do you wish to add $(pwd)/bin to your environment path?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes) 
+		echo "yes!"; 
+		echo "export PATH=\$PATH:$(pwd)/bin" >> ~/.bash_profile
+		source ~/.bash_profile
+		break;;
+        No) 
+		echo "no"; break;;
+    esac
+done
+
+printf "\nInstallation complete. Have a nice day!\n"
+exit 0
