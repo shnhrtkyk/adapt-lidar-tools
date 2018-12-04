@@ -75,6 +75,8 @@ select yn in "Yes" "No"; do
 		echo "yes!"; 
 		echo "export PATH=\$PATH:$(pwd)/bin" >> ~/.bash_profile
 		source ~/.bash_profile
+		printf "\nInstallation complete.\n" 
+		printf "Please run \"source ~/.bash_profile\" or restart your session!\n"
 		break;;
         No) 
 		echo "no"; break;;
