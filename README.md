@@ -32,9 +32,8 @@ Pulse wave format LiDAR data analysis tools
 
 
 ## Credits
-* Ravi Shankar [![](https://rvishnkr.github.io/images/ravi-email.png)](#)
+* [Ravi Shankar](http://coen.boisestate.edu/adaptlab/students/) [![](https://rvishnkr.github.io/images/ravi-email.png)](#)
 * [Dr. Catherine Olschanowsky](https://coen.boisestate.edu/catherineolschan/)
+* Nayani Ilangakoon
+* [Dr. Nancy Glenn](https://bcal.boisestate.edu/people/staff/nancy-glenn/)
 
-## License
-
-TODO: Write license
