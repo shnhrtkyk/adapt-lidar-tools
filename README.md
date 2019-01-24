@@ -1,5 +1,5 @@
 # Adapt-Lidar-Tools
-PulseWaves format LiDAR data processing tools
+PulseWaves format full waveform LiDAR data processing tools
 
 ## Introduction
 
