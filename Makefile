@@ -83,7 +83,7 @@ $(BIN)/geotiff-driver: $(OBJ)/PlsToGeotiff.o $(OBJ)/CmdLine.o \
 			$(OBJ)/Peak.o $(OBJ)/GaussianFitter.o
 	$(CXX) $(CXXFLAGS) -g -lpthread $^ -o $@ -L \
 		$(PULSE_DIR)/lib -lpulsewaves -lgdal -lm -lgsl \
-		-lgslcblas -lpng
+		-lgslcblas 
 
 $(OBJ)/PlsToGeotiff.o: $(SRC)/PlsToGeotiff.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $^

@@ -68,7 +68,10 @@ int main (int argc, char *argv[]) {
         fitter.smoothing_expt(&pd.returningWave);
         int peak_count = fitter.find_peaks(&peaks, pd.returningWave,
                                           pd.returningIdx);
-
+        //No peaks for a returning waveform. Continue processing
+        if(peak_count ==0){
+          continue;
+        }    
         // foreach peak - find activation point
         //              - calculate x,y,z
         peak_count = rawData.calc_xyz_activation(&peaks);
@@ -88,6 +91,9 @@ int main (int argc, char *argv[]) {
       pd.displayPulseData(&stream);
       std::cout << stream.str() << std::endl;
       stream.str("");
+      std::cerr << "Total: " << fitter.get_total() << std::endl;
+      std::cerr << "Pass: " << fitter.get_pass() << std::endl;
+      std::cerr << "Fail: " << fitter.get_fail() << std::endl;
     #endif
 
   }

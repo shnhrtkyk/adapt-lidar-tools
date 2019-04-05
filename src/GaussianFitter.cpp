@@ -220,18 +220,15 @@ int solve_system(gsl_vector *x, gsl_multifit_nlinear_fdf *fdf,
   const double ftol = 1.0e-8;
   const size_t n = fdf->n;
   const size_t p = fdf->p;
-
   //Error handling
   int status;
   //gsl_set_error_handler_off();
-
   gsl_multifit_nlinear_workspace *work =
     gsl_multifit_nlinear_alloc(T, params, n, p);
   gsl_vector * f = gsl_multifit_nlinear_residual(work);
   gsl_vector * y = gsl_multifit_nlinear_position(work);
   int info;
   double chisq0, chisq, rcond;
-
   /* initialize solver */
   gsl_multifit_nlinear_init(x, fdf, work);
 
@@ -294,10 +291,12 @@ int GaussianFitter::find_peaks(std::vector<Peak>* results,
 
   //figure out how many items there are in the ampData
   size_t n = ampData.size();
-
   //figure out how many peaks there are in the data
   std::vector<int> peak_guesses_loc = guess_peaks(ampData);
   size_t peakCount = peak_guesses_loc.size();
+  if(peakCount == 0){
+    return 0;
+  }
 
   // FOR TESTING PURPOSES
   // fprintf(stderr, "Peak count is %d\n", peakCount);
@@ -306,7 +305,6 @@ int GaussianFitter::find_peaks(std::vector<Peak>* results,
 
   // try to filter out some of the guesses if they are
   // near the noise
-
   //allocate space for fitting
   const gsl_rng_type * T = gsl_rng_default;
   gsl_vector *f = gsl_vector_alloc(n);
